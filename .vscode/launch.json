@@ -164,6 +164,13 @@
                 "DAPR_HTTP_PORT": "5880",
                 "DAPR_GRPC_PORT": "5801"
             }
+        },
+        {
+            "name": "Attach to Node Functions",
+            "type": "node",
+            "request": "attach",
+            "port": 9229,
+            "preLaunchTask": "func: host start"
         }
     ],
     "compounds": [
