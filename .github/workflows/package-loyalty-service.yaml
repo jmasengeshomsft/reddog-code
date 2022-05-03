@@ -26,7 +26,7 @@ jobs:
           echo ::set-output name=created::$(date -u +'%Y-%m-%dT%H:%M:%SZ')
           echo ::set-output name=project::LoyaltyService
           echo ::set-output name=image::reddog-retail-loyalty-service
-          echo ::set-output name=repository::ghcr.io/azure/reddog-retail-demo
+          echo ::set-output name=repository::ghcr.io/jmasengeshomsft/reddog-gitops
 
   package-service:
     name: Package Service
@@ -90,7 +90,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.CR_PAT }}
         with:
           source_file: manifests/branch/base/deployments/loyalty-service.yaml
-          destination_repo: Azure/reddog-retail-demo
+          destination_repo: jmasengeshomsft/reddog-gitops
           destination_folder: manifests/branch/base/deployments
           git_server: github.com
           user_email: lynn.orrell@microsoft.com
@@ -101,7 +101,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.CR_PAT }}
         with:
           source_file: manifests/corporate/deployments/loyalty-service.yaml
-          destination_repo: Azure/reddog-retail-demo
+          destination_repo: jmasengeshomsft/reddog-gitops
           destination_folder: manifests/corporate/base/deployments
           git_server: github.com
           user_email: lynn.orrell@microsoft.com
